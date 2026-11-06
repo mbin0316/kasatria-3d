@@ -74,6 +74,7 @@ Go to <https://console.cloud.google.com>.
    | `VITE_SHEETS_API_KEY` | API key from 2.6 |
    | `VITE_SHEET_ID` | Sheet ID from 1.6 |
    | `VITE_SHEET_RANGE` | `Data!A1:F` |
+   | `VITE_ALLOWED_ACCOUNTS` (optional) | Who may sign in, e.g. `lisa@kasatria.com, @kasatria.com, you@gmail.com`. Leave unset to allow any Google account. |
 
 3. Repo → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 4. Push the code (I can do this once the repo exists):
@@ -114,3 +115,4 @@ production. The site includes `privacy.html` for this.
 | Data error 400 | Tab isn't named `Data` (or change `VITE_SHEET_RANGE`). |
 | Data error 404 | Wrong Sheet ID. |
 | "Site not configured" page | A GitHub Actions variable is missing — add it and re-run the workflow. |
+| "Wrong account" after signing in | That account is not in `VITE_ALLOWED_ACCOUNTS`. Sign in with an allowed account, or add it to the variable and re-run the workflow. |

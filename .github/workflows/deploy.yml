@@ -37,6 +37,7 @@ jobs:
           VITE_SHEETS_API_KEY: ${{ vars.VITE_SHEETS_API_KEY }}
           VITE_SHEET_ID: ${{ vars.VITE_SHEET_ID }}
           VITE_SHEET_RANGE: ${{ vars.VITE_SHEET_RANGE }}
+          VITE_ALLOWED_ACCOUNTS: ${{ vars.VITE_ALLOWED_ACCOUNTS }}
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

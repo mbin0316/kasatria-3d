@@ -1,3 +1,5 @@
+import { parseAllowList } from './auth/access.js'
+
 const env = import.meta.env
 const read = (key) => (env[key] ?? '').trim()
 
@@ -6,6 +8,8 @@ export const config = {
   apiKey: read('VITE_SHEETS_API_KEY'),
   sheetId: read('VITE_SHEET_ID'),
   sheetRange: read('VITE_SHEET_RANGE') || 'Data!A1:F',
+  /** Emails and/or "@domain" entries allowed to sign in; empty = any verified Google account. */
+  allowedAccounts: parseAllowList(read('VITE_ALLOWED_ACCOUNTS')),
 }
 
 /** Local development only: lets the UI run before Google credentials exist. */
