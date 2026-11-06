@@ -1,0 +1,50 @@
+@import './login.css';
+@import './tile.css';
+@import './ui.css';
+
+:root {
+  --red: #ef3022;
+  --orange: #f7941d;
+  --yellow: #fdca35;
+  --green: #3a9f48;
+  --red-rgb: 239, 48, 34;
+  --orange-rgb: 247, 148, 29;
+  --green-rgb: 58, 159, 72;
+  --ui-line: rgba(127, 255, 255, 0.35);
+  --ui-text: rgba(200, 255, 255, 0.85);
+  --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+:focus-visible {
+  outline: 2px solid #7ff;
+  outline-offset: 2px;
+}
