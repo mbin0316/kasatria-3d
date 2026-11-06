@@ -24,7 +24,10 @@ export async function fetchSheetValues({ sheetId, range, apiKey, signal }) {
 
   let res
   try {
-    res = await fetch(url, { signal })
+    // Send the full page URL as Referer (browsers default to origin-only for
+    // cross-origin requests), so a path-specific API key website restriction
+    // such as https://<user>.github.io/<repo>/* also matches.
+    res = await fetch(url, { signal, referrerPolicy: 'no-referrer-when-downgrade' })
   } catch (err) {
     if (err.name === 'AbortError') throw err
     throw new Error('Could not reach Google Sheets. Check your internet connection.')

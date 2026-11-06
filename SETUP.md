@@ -52,7 +52,7 @@ Go to <https://console.cloud.google.com>.
    the key (**Edit API key**):
    - **Application restrictions → Websites**, add:
      - `http://localhost:5173/*`
-     - `https://<username>.github.io/<repo>/*`
+     - `https://<username>.github.io/<repo>/*` (the app sends its full page URL to Google, so this path-specific entry works)
    - **API restrictions → Restrict key** → tick **Google Sheets API** → **Save**.
 7. Send me (they are not secrets — they ship in the public page; the restrictions above
    protect them):
